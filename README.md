@@ -5,12 +5,12 @@ Main goal of this repository to learn and contribute.
 
 # How to contribute?
 
-## Clone the repository first.
+### Clone the repository first.
 
-## Create your own branch
+### Create your own branch
 
-## Add your files
+### Add your files
 
-## Make a pull request
+### Make a pull request
 
-## After I examine your solution it will be merged to main branch
+### After I examine your solution it will be merged to main branch
