@@ -1,60 +1,54 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+
 using namespace std;
 
 // swap function
-void swap(int *x, int *y){
+void swap(int *x, int *y) {
     int temp = *x;
     *x = *y;
     *y = temp;
 }
 
-int partiton(vector<int> &arr,int l,int h){
-   int pivot  = arr[l];
-   int i = l, j = h;
-
-   while (i<j)
-   {
-      if(arr[i] <= pivot){
-          i++;
-      }
-      if(arr[j] > pivot){
-          j--;
-      }
-      if(i<j){
-          swap(arr[i],arr[j]);
-      }
-   }
-   swap(arr[l],arr[j]);
-   return j;
-   
-
+int partition(vector<int> &v, int l, int h) {
+    int pivot = v[l];
+    int i = l, j = h;
+    
+    do {
+        do {i++;} while (v[i] <= pivot);
+        do {j--;} while (v[j] > pivot);
+        
+        if (i < j)
+            swap(&v[i], &v[j]);
+    } while(i < j);
+    
+    swap(&v[l], &v[j]);
+    
+    return j;
 }
 
-// function of quickSort sort
-
-void quickSort(vector<int> &arr,int l,int h){
-    if(l<h){
-        int j = partiton(arr,l,h);
-        quickSort(arr,l,j);
-        quickSort(arr,j+1,h);
+void quickSort(vector<int> &v, int l, int h) {
+    int j;
+    if (l < h) {
+        j = partition(v, l, h);
+        quickSort(v, l, j);
+        quickSort(v, j+1, h);
     }
 }
-
-
-// function for priting array values.
-void print(vector<int> &arr,int n){
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+void print(vector<int> v,int n)
+{
+    for (int i = 0; i < n-1; i++)
+        printf("%d ", v[i]);
+    printf("\n");
 }
 
-int main(){
-   vector<int> arr = {12, 16, 15, 14, 7, 13, 9}; 
-   int n = arr.size();
-   int l = 0, h = n-1;
-   
-   cout<<endl<<"array before sorting : ";print(arr,n);
-   quickSort(arr,l,h);
-   cout<<endl<<"array after sorting :  ";print(arr,n);
-   cout<<endl; 
+int main() {
+    vector<int> v = {12,16,15,14,7,13,9,INT32_MAX};
+    int n = v.size();
+
+    quickSort(v, 0, n-1);
+
+    print(v,n);
+  
+    return 0;
 }
