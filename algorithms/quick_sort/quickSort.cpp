@@ -43,7 +43,10 @@ void print(vector<int> v,int n)
 }
 
 int main() {
-    vector<int> v = {12,16,15,14,7,13,9,INT32_MAX};
+    vector<int> v;
+    int arr[] = {12,16,15,14,7,13,9,INT32_MAX};
+    for (int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++)
+        v.push_back(arr[i]);
     int n = v.size();
 
     quickSort(v, 0, n-1);
