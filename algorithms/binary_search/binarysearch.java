@@ -17,6 +17,7 @@ public class binarysearch{
         System.out.print("Enter target element ");
         int target = scn.nextInt();
         System.out.print(binarySearch(arr,target));
+        scn.close();
         
     }
 
