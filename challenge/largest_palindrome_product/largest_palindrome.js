@@ -26,7 +26,8 @@ const palindromeFunctionHandler = () => {
 
 	// get the max of all palindrome
 	const palindrome = Math.max(...palindromeArray);
-	console.log(palindrome);
+   console.log(palindrome);
+   return palindrome;
 };
 
 palindromeFunctionHandler();
