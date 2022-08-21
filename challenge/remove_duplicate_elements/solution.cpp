@@ -23,5 +23,7 @@ int main() {
     for (auto const &num : temp) {
         std::cout << num << " ";
     }
+
+    return 0;
 }
 */
