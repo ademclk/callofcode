@@ -15,4 +15,5 @@ def nthprime(nth):
         if primeornot(n):
             n_primes += 1
     return n
-print(nthprim
+
+print(nthprime(10001))
