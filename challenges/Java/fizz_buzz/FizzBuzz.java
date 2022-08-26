@@ -8,7 +8,8 @@ public class FizzBuzz {
         // Reading the integer from the users input
         int n = scanner.nextInt();
         System.out.println("The Fizz, Buzz and FizzBuzz numbers are: ");
-
+        scanner.close();
+        
         // Iterating from 1 to n
         for (int i = 1; i <= n; i++) {
             // If the integer is divisible by both 3 and 5 then we print the integer followed by "FizzBuzz" word
