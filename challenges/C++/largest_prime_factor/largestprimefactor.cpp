@@ -1,28 +1,42 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 
-using namespace std;
-int main()
+long long maxPrimeFactors(long long n)
 {
-  long long int n = 800851475143;
-  long long int max = INT_MIN;
+  long long maxPrime = -1;
   while (n % 2 == 0)
   {
-    max = 2;
-    n = n / 2;
+    maxPrime = 2;
+    n >>= 1;
   }
-
-  for (long long int i = 3; i <= sqrt(n); i = i + 2) // i will only iterate through odd values
+  while (n % 3 == 0)
+  {
+    maxPrime = 3;
+    n = n / 3;
+  }
+  for (int i = 5; i <= sqrt(n); i += 6)
   {
     while (n % i == 0)
     {
-      max = i;
+      maxPrime = i;
       n = n / i;
     }
+    while (n % (i + 2) == 0)
+    {
+      maxPrime = i + 2;
+      n = n / (i + 2);
+    }
   }
-  if (n > 2)
-  {
-    max = n;
-  }
-  cout << max << endl;
+  if (n > 4)
+    maxPrime = n;
+
+  return maxPrime;
 }
+
+int main()
+{
+  long long n;
+  std::cin>>n;
+  std::cout << maxPrimeFactors(n) << std::endl;
+}
+// Time complexity: {O}(\sqrt{n})       
+// Auxiliary space: {O}(1)       
