@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-long long maxPrimeFactors(long long n)
 
+long long maxPrimeFactors(long long n)
 {
   long long maxPrime = -1;
   while (n % 2 == 0)
@@ -38,6 +38,5 @@ int main()
   std::cin>>n;
   std::cout << maxPrimeFactors(n) << std::endl;
 }
-
 // Time complexity: {O}(\sqrt{n})       
 // Auxiliary space: {O}(1)       
