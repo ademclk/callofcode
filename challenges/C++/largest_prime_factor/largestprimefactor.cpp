@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
-
-
 long long maxPrimeFactors(long long n)
+
 {
 
   long long maxPrime = -1;
