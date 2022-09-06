@@ -14,8 +14,8 @@ void reverseStr (char *str) {
 int main () {
     char str[50];
     printf("Enter the string: ");
-    fgets(string, 50, stdin);
-    puts(string);
+    fgets(str, 50, stdin);
+    puts(str);
     printf("Original string: %s\n", str);
     reverseStr(str);
     printf("After reversing the string: %s", str);
