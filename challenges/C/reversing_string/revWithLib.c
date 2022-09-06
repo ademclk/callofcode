@@ -8,9 +8,9 @@ int reverseString(char string[40]) {
 
 int main()  
 {  
-    char string[40]; // declare the size of character string  
-    printf (" \n Enter a string to be reversed: ");  
-    scanf ("%s", &string);  
+    	char string[40]; // declare the size of character string  
+    	printf (" \n Enter a string to be reversed: ");  
+    	scanf ("%s", &string);  
 	reverseString(string);
 	return 0;  
 }
